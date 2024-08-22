@@ -15,54 +15,54 @@
         }
 
         .sidebar {
-        height: 100%;
-        width: 0;
-        position: fixed;
-        z-index: 1;
-        top: 0;
-        left: 0;
-        background-color: #f8f9fa;
-        overflow-x: hidden;
-        transition: 0.5s;
-        padding-top: 30px;
+            height: 100%;
+            width: 0;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: #f8f9fa;
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 30px;
         }
 
         .sidebar a {
-        padding: 8px 8px 8px 40px;
-        text-decoration: none;
-        font-size: large;
-        font-weight: bold;
-        margin: 3px;
-        color: #818181;
-        display: block;
-        transition: 0.3s;
+            padding: 8px 8px 8px 40px;
+            text-decoration: none;
+            font-size: large;
+            font-weight: bold;
+            margin: 3px;
+            color: #818181;
+            display: block;
+            transition: 0.3s;
         }
 
         .sidebar a:hover {
-        color: black
+            color: black;
         }
 
         .openbtn {
-        font-size: 20px;
-        cursor: pointer;
-        color: white;
-        padding: 10px 15px;
-        border: none;
+            font-size: 20px;
+            cursor: pointer;
+            color: white;
+            padding: 10px 15px;
+            border: none;
         }
 
         .openbtn:hover {
-        text-shadow: #444;
+            text-shadow: #444;
         }
 
         #main {
-        transition: margin-left .5s;
-        padding: 16px;
+            transition: margin-left .5s;
+            padding: 16px;
         }
 
         /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
         @media screen and (max-height: 450px) {
-        .sidebar {padding-top: 15px;}
-        .sidebar a {font-size: 18px;}
+            .sidebar {padding-top: 15px;}
+            .sidebar a {font-size: 18px;}
         }
 
         .cont-head, .cont-body {
@@ -78,6 +78,17 @@
             float: right;
             width: 50%;
             text-align: right;
+        }
+
+        .courses {
+            color: white;
+        }
+
+        .grade {
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 30%;
+            padding: 15px;
+            font-size: x-large;
         }
     </style>
   </head>
@@ -108,8 +119,8 @@
             </div>
         </nav>
         <div class="container">
-            <div class="row mb-3">
-                <div class="col-sm-12">
+            <div class="row">
+                <div class="col-sm-12 mb-3">
                     <div class="p-3 alert-danger rounded">
                         <h3>Welcome back Anna!</h3>
                         <p>You have learned <b>80%</b> of your goal this week!<br>
@@ -117,7 +128,7 @@
                     </div>
                 </div>
             </div>
-            <div class="row mb-3">
+            <div class="row">
                 <div class="col-sm-5 mb-3">
                     <div class="rounded p-3" style="background-color: #f8f9fa;">
                         <div class="cont-head mb-4">
@@ -159,7 +170,8 @@
                                 </div>&nbsp;&nbsp;&nbsp;
                                 <span>15%</span>
                             </span>
-                        </div><hr /><div class="cont-body mb-3 d-flex align-items-center justify-content-between">
+                        </div><hr />
+                        <div class="cont-body mb-3 d-flex align-items-center justify-content-between">
                             <span class="cont-body-left"><b>Unit 6 - </b>Job market</span>
                             <span class="cont-right d-flex align-items-center">
                                 <div class="progress" style="height: 3px; width: 75%; margin-right: 10px;">
@@ -170,11 +182,59 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-7">
+                <div class="col-sm-7 mb-3">
                     <div class="rounded p-3" style="background-color: #f8f9fa;">
                         <div class="cont-head">
                             <span class="cont-left">Time spent on learning</span>
                             <span class="cont-right">Last week <i class="fa fa-chevron-down"></i></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="cont-head mb-3">
+                <span class="cont-left">Your Courses</span>
+                <span class="cont-right">More <i class="fa fa-arrow-right"></i></span>
+            </div>
+            <div class="row courses">
+                <div class="col-sm-4 mb-3">
+                    <div class="rounded p-3" style="background-color: rgb(77, 76, 172); display: flex; justify-content: space-between; align-items: center;">
+                        <div class="m-2">
+                            <span class="grade">B2</span>
+                        </div>
+                        <div class="m-2" style="flex-grow: 1;">
+                            <span style="font-size: small; letter-spacing: 1px;">Business English</span>
+                            <div class="cont-head mt-2">
+                                <span class="cont-left">Grammar</span>
+                                <span class="cont-right"><i class="fa fa-arrow-right"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4 mb-3">
+                    <div class="rounded p-3" style="background-color: rgb(150, 152, 214); display: flex; justify-content: space-between; align-items: center;">
+                        <div class="m-2">
+                            <span class="grade">B2</span>
+                        </div>
+                        <div class="m-2" style="flex-grow: 1;">
+                            <span style="font-size: small; letter-spacing: 1px;">Common English</span>
+                            <div class="cont-head mt-2">
+                                <span class="cont-left">Phrasal verb</span>
+                                <span class="cont-right"><i class="fa fa-arrow-right"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4 mb-3">
+                    <div class="rounded p-3" style="background-color: rgb(255, 128, 139); display: flex; justify-content: space-between; align-items: center;">
+                        <div class="m-2">
+                            <span class="grade">C1</span>
+                        </div>
+                        <div class="m-2" style="flex-grow: 1;">
+                            <span style="font-size: small; letter-spacing: 1px;">Business Spanish</span>
+                            <div class="cont-head mt-2">
+                                <span class="cont-left">Vocabulary</span>
+                                <span class="cont-right"><i class="fa fa-arrow-right"></i></span>
+                            </div>
                         </div>
                     </div>
                 </div>
