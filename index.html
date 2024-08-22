@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Dashboard</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body {
+            background-color: #e8ecef;
+        }
+
+        .sidebar {
+        height: 100%;
+        width: 0;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color: #f8f9fa;
+        overflow-x: hidden;
+        transition: 0.5s;
+        padding-top: 30px;
+        }
+
+        .sidebar a {
+        padding: 8px 8px 8px 40px;
+        text-decoration: none;
+        font-size: large;
+        font-weight: bold;
+        margin: 3px;
+        color: #818181;
+        display: block;
+        transition: 0.3s;
+        }
+
+        .sidebar a:hover {
+        color: black
+        }
+
+        .openbtn {
+        font-size: 20px;
+        cursor: pointer;
+        color: white;
+        padding: 10px 15px;
+        border: none;
+        }
+
+        .openbtn:hover {
+        text-shadow: #444;
+        }
+
+        #main {
+        transition: margin-left .5s;
+        padding: 16px;
+        }
+
+        /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+        @media screen and (max-height: 450px) {
+        .sidebar {padding-top: 15px;}
+        .sidebar a {font-size: 18px;}
+        }
+
+        .cont-head, .cont-body {
+            width: 100%;
+        }
+
+        .cont-left {
+            font-weight: bolder;
+        }
+
+        .cont-right {
+            position: relative;
+            float: right;
+            width: 50%;
+            text-align: right;
+        }
+    </style>
+  </head>
+  <body>
+    <div id="mySidebar" class="sidebar">
+        <a href="">LOGO</a>
+        <hr class="mt-1 mb-1"/>
+        <a href="#"><i class="fa fa-table-columns"></i> Dashboard</a>
+        <a href="#"><i class="fa-regular fa-folder"></i> Classes</a>
+        <a href="#"><i class="fa-solid fa-book"></i> Resources</a>
+        <a href="#"><i class="fa-regular fa-calendar"></i> Learning Plan</a>
+        <a href="#"><i class="fa-regular fa-message"></i> Chat</a>
+        <a href="#"><i class="fa-regular fa-pen-to-square"></i> Settings</a>
+    </div>
+    <div id="main">
+        <nav class="navbar navbar-expand-sm navbar-light bg-light mb-3">
+            <a class="openbtn" id="openbtn" onclick="openNav()"><span class="navbar-toggler-icon"></span></a>
+            <a class="navbar-brand" href="#">Dashboard</a>
+            <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="collapsibleNavId">
+                <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="text" placeholder="Search">
+                    <button class="btn btn-outline-primary my-2 my-sm-0" type="submit"><i class="fa fa-magnifying-glass"></i></button>
+                </form>
+            </div>
+        </nav>
+        <div class="container">
+            <div class="row mb-3">
+                <div class="col-sm-12">
+                    <div class="p-3 alert-danger rounded">
+                        <h3>Welcome back Anna!</h3>
+                        <p>You have learned <b>80%</b> of your goal this week!<br>
+                        Keep it up and improve your results!</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-sm-5 mb-3">
+                    <div class="rounded p-3" style="background-color: #f8f9fa;">
+                        <div class="cont-head mb-4">
+                            <span class="cont-left">Latest results</span>
+                            <span class="cont-right">More <i class="fa fa-arrow-right"></i></span>
+                        </div>
+                        <div class="cont-body mb-3 d-flex align-items-center justify-content-between">
+                            <span class="cont-body-left"><b>Unit 5 - </b>Technology</span>
+                            <span class="cont-right d-flex align-items-center">
+                                <div class="progress" style="height: 3px; width: 75%; margin-right: 10px;">
+                                    <div class="progress-bar bg-danger" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>&nbsp;&nbsp;&nbsp;
+                                <span>25%</span>
+                            </span>
+                        </div><hr />
+                        <div class="cont-body mb-3 d-flex align-items-center justify-content-between">
+                            <span class="cont-body-left"><b>Unit 12 - </b>Ecology</span>
+                            <span class="cont-right d-flex align-items-center">
+                                <div class="progress" style="height: 3px; width: 75%; margin-right: 10px;">
+                                    <div class="progress-bar" role="progressbar" style="width: 44%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>&nbsp;&nbsp;&nbsp;
+                                <span>44%</span>
+                            </span>
+                        </div><hr />
+                        <div class="cont-body mb-3 d-flex align-items-center justify-content-between">
+                            <span class="cont-body-left"><b>Unit 9 - </b>Real estate</span>
+                            <span class="cont-right d-flex align-items-center">
+                                <div class="progress" style="height: 3px; width: 75%; margin-right: 10px;">
+                                    <div class="progress-bar" role="progressbar" style="width: 40%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>&nbsp;&nbsp;&nbsp;
+                                <span>40%</span>
+                            </span>
+                        </div><hr />
+                        <div class="cont-body mb-3 d-flex align-items-center justify-content-between">
+                            <span class="cont-body-left"><b>Unit 8 - </b>Education</span>
+                            <span class="cont-right d-flex align-items-center">
+                                <div class="progress" style="height: 3px; width: 75%; margin-right: 10px;">
+                                    <div class="progress-bar bg-danger" role="progressbar" style="width: 15%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>&nbsp;&nbsp;&nbsp;
+                                <span>15%</span>
+                            </span>
+                        </div><hr /><div class="cont-body mb-3 d-flex align-items-center justify-content-between">
+                            <span class="cont-body-left"><b>Unit 6 - </b>Job market</span>
+                            <span class="cont-right d-flex align-items-center">
+                                <div class="progress" style="height: 3px; width: 75%; margin-right: 10px;">
+                                    <div class="progress-bar" role="progressbar" style="width: 76%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>&nbsp;&nbsp;&nbsp;
+                                <span>76%</span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-7">
+                    <div class="rounded p-3" style="background-color: #f8f9fa;">
+                        <div class="cont-head">
+                            <span class="cont-left">Time spent on learning</span>
+                            <span class="cont-right">Last week <i class="fa fa-chevron-down"></i></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script>
+        function openNav() {
+          document.getElementById("mySidebar").style.width = "250px";
+          document.getElementById("main").style.marginLeft = "250px";
+          document.getElementById("openbtn").setAttribute('onclick','closeNav()');
+        }
+        
+        function closeNav() {
+          document.getElementById("mySidebar").style.width = "0";
+          document.getElementById("main").style.marginLeft= "0";
+          document.getElementById("openbtn").setAttribute('onclick','openNav()');
+        }
+    </script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>
