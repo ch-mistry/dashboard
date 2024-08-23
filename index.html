@@ -9,6 +9,8 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.0.1/dist/chart.umd.min.js"></script>
+
     <style>
         body {
             background-color: #e8ecef;
@@ -28,10 +30,9 @@
         }
 
         .sidebar a {
-            padding: 8px 8px 8px 40px;
+            padding: 16px 8px 16px 40px;
             text-decoration: none;
-            font-size: large;
-            font-weight: bold;
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
             margin: 3px;
             color: #818181;
             display: block;
@@ -90,18 +91,27 @@
             padding: 15px;
             font-size: x-large;
         }
+
+        #welcome-image {
+            height: 250px;
+            width: auto;
+            right: 0;
+            position: absolute;
+            bottom: 0;
+            display: block;
+        }
     </style>
   </head>
   <body>
     <div id="mySidebar" class="sidebar">
-        <a href="">LOGO</a>
+        <a href=""><img src="logo.png" width="50px" alt="logo">&nbsp;&nbsp;&nbsp;LOGO</a>
         <hr class="mt-1 mb-1"/>
-        <a href="#"><i class="fa fa-table-columns"></i> Dashboard</a>
-        <a href="#"><i class="fa-regular fa-folder"></i> Classes</a>
-        <a href="#"><i class="fa-solid fa-book"></i> Resources</a>
-        <a href="#"><i class="fa-regular fa-calendar"></i> Learning Plan</a>
-        <a href="#"><i class="fa-regular fa-message"></i> Chat</a>
-        <a href="#"><i class="fa-regular fa-pen-to-square"></i> Settings</a>
+        <a href="#"><i class="fa fa-table-columns"></i>&nbsp;&nbsp;&nbsp;<b>Dashboard</b></a>
+        <a href="#"><i class="fa-regular fa-folder"></i>&nbsp;&nbsp;&nbsp;<b>Classes</b></a>
+        <a href="#"><i class="fa-solid fa-book"></i>&nbsp;&nbsp;&nbsp;<b>Resources</b></a>
+        <a href="#"><i class="fa-regular fa-calendar"></i>&nbsp;&nbsp;&nbsp;<b>Learning Plan</b></a>
+        <a href="#"><i class="fa-regular fa-message"></i>&nbsp;&nbsp;&nbsp;<b>Chat</b></a>
+        <a href="#"><i class="fa-regular fa-pen-to-square"></i>&nbsp;&nbsp;&nbsp;<b>Settings</b></a>
     </div>
     <div id="main">
         <nav class="navbar navbar-expand-sm navbar-light bg-light mb-3">
@@ -121,10 +131,12 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-12 mb-3">
-                    <div class="p-3 alert-danger rounded">
-                        <h3>Welcome back Anna!</h3>
-                        <p>You have learned <b>80%</b> of your goal this week!<br>
-                        Keep it up and improve your results!</p>
+                    <div class="p-3 alert-danger rounded d-flex align-items-center justify-content-between">
+                        <div class="p-3" style="letter-spacing: 1px;">
+                            <h3 class="text-danger">Welcome back Anna!</h3>
+                            <p>You have learned <b>80%</b> of your goal this week!<br>Keep it up and improve your results!</p>
+                        </div>
+                        <img id="welcome-image" src="customer-support.png" alt="Image">
                     </div>
                 </div>
             </div>
@@ -187,6 +199,9 @@
                         <div class="cont-head">
                             <span class="cont-left">Time spent on learning</span>
                             <span class="cont-right">Last week <i class="fa fa-chevron-down"></i></span>
+                        </div>
+                        <div class="cont-body d-flex align-items-center justify-content-between">
+                            <canvas id="stackedChartID" class="m-3"></canvas>
                         </div>
                     </div>
                 </div>
@@ -255,6 +270,66 @@
           document.getElementById("main").style.marginLeft= "0";
           document.getElementById("openbtn").setAttribute('onclick','openNav()');
         }
+    </script>
+    <script>
+
+        // Get the drawing context on the canvas
+        var myContext = document.getElementById(
+            "stackedChartID").getContext('2d');
+        var myChart = new Chart(myContext, {
+            type: 'bar',
+            data: {
+                labels: ["Mon","Tue","Wed","Thu","Fri","Sat","Sun"],
+                datasets: [{
+                    label: 'Vocabulary',
+                    backgroundColor: "#FF808B",
+                    data: [15,10,0,35,20,0,15],
+                }, {
+                    label: 'Grammar',
+                    backgroundColor: "#4D4CAC",
+                    data: [60,0,45,0,0,60,45],
+                }, {
+                    label: 'Listening',
+                    backgroundColor: "#5E81F4",
+                    data: [0,90,40,65,0,40,40],
+                }, {
+                    label: 'Writing',
+                    backgroundColor: "#C8C9E9",
+                    data: [25,0,15,0,80,0,0],
+                }],
+            },
+            options: {
+                plugins: {
+                    title: {
+                        display: false,
+                        text: 'Stacked Bar chart for pollution status'
+                    },
+                    legend: {
+                        position: 'bottom',
+                        labels: {
+                            usePointStyle: true
+                        }
+                    },
+                },
+                scales: {
+                    x: {
+                        stacked: true,
+                        grid: {
+                            display: false
+                        },
+                        position: 'top',
+                    },
+                    y: {
+                        display: false,
+                        stacked: true,
+                        grid: {
+                            display: false
+                        }
+                    },
+                },
+                barThickness: 5
+            }
+        });
     </script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
